@@ -11,7 +11,7 @@ body{min-height:100vh;background:radial-gradient(800px 420px at 16% -6%,rgba(255
 .kick{font-family:var(--head);letter-spacing:.4em;text-transform:uppercase;font-size:11px;color:var(--teal);text-align:center}
 h1{font-family:var(--disp);font-size:clamp(48px,10vw,92px);line-height:.9;letter-spacing:2px;text-align:center;margin:10px 0 6px;background:linear-gradient(92deg,var(--jinxb),var(--jinx) 55%,var(--vi));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 26px rgba(255,45,142,.3))}
 .dek{color:var(--mut);text-align:center;max-width:560px;margin:0 auto 34px;font-size:16px}
-.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:760px}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:760px} @media(max-width:560px){.cards{grid-template-columns:1fr}}
 a.card{display:block;text-decoration:none;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:26px;transition:transform .15s,border-color .15s,box-shadow .15s}
 a.card.brief{border-top:3px solid var(--gold)} a.card.bio{border-top:3px solid var(--jinxb)}
 a.card:hover{transform:translateY(-4px);box-shadow:0 10px 34px rgba(0,0,0,.5)}
@@ -28,6 +28,8 @@ a.card.brief:hover{border-color:var(--gold)} a.card.bio:hover{border-color:var(-
 <div class="cards">
   <a class="card brief" href="./daily-brief.html"><div class="t">The Daily Brief</div><div class="d">Today's edition. What everyone did, what's new in AI and games, where to make money, and where to pivot.</div><div class="go">Read today &rarr;</div></a>
   <a class="card bio" href="./the-long-game.html"><div class="t">The Long Game</div><div class="d">The living biography. Wins, losses, ships, and pivots, a little more each day.</div><div class="go">See the journey &rarr;</div></a>
+  <a class="card bio" href="./the-collective.html" style="grid-column:1/-1;border-top-color:#e6b13e"><div class="t">The Collective</div><div class="d">Who we are, how we work, the four gods, and how game ideas get forged.</div><div class="go">Meet the team &rarr;</div></a>
+  <a class="card bio" href="./bloodline.html" style="grid-column:1/-1;border-top-color:#e0603a"><div class="t">Bloodline</div><div class="d">Our first game. An open-world survival saga across ten thousand years. Outlive yourself, age by age. Teaser and rule sets.</div><div class="go">Read the saga &rarr;</div></a>
 </div>
 <div class="foot">lilkat Collective · private &middot; not indexed</div>
 </body></html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive, noimageindex">
+<title>BLOODLINE · Survive the Ages. Outlive Yourself.</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;900&family=Bebas+Neue&family=Oswald:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{
+  --bg:#06070b;--panel:#0d1016;--panel2:#12151e;--line:#1d2433;--ink:#edf0f7;--mut:#8b95ab;--faint:#4a5268;
+  --gold:#e6b13e;--bronze:#c8780a;--ember:#e0603a;--rune:#a08060;--teal:#2fd9c4;--blood:#9e2b3a;--bone:#d8cdb0;
+  --disp:"Bebas Neue",Impact,sans-serif;--cinzel:"Cinzel",Georgia,serif;--head:"Oswald",sans-serif;--body:"Inter","Segoe UI",sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.7;overflow-x:hidden}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+.rune-border{text-align:center;font-family:var(--cinzel);font-size:13px;letter-spacing:.5em;color:var(--rune);opacity:.45;padding:14px 0;user-select:none}
+
+/* ===== HERO ===== */
+.hero{position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:80px 22px 60px;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(1100px 600px at 50% 8%,rgba(224,96,58,.20),transparent 60%),
+    radial-gradient(900px 700px at 50% 110%,rgba(230,177,62,.16),transparent 60%),
+    radial-gradient(700px 500px at 12% 60%,rgba(158,43,58,.14),transparent 60%),
+    linear-gradient(180deg,#06070b,#0a0c12 60%,#06070b)}
+.hero-bg::after{content:'';position:absolute;inset:0;opacity:.5;
+  background:repeating-linear-gradient(90deg,transparent,transparent 64px,rgba(200,120,10,.04) 64px,rgba(200,120,10,.04) 65px),
+  repeating-linear-gradient(0deg,transparent,transparent 64px,rgba(200,120,10,.04) 64px,rgba(200,120,10,.04) 65px)}
+.hero-svg{position:absolute;left:0;right:0;bottom:0;width:100%;z-index:1;opacity:.7}
+.hero-inner{position:relative;z-index:2}
+.eyebrow{font-family:var(--cinzel);font-size:12px;letter-spacing:.55em;color:var(--rune);text-transform:uppercase;margin-bottom:22px}
+.title{font-family:var(--disp);font-weight:400;font-size:clamp(64px,15vw,170px);letter-spacing:.04em;line-height:.86;
+  background:linear-gradient(180deg,#fff 0%,var(--gold) 55%,var(--bronze) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 6px 30px rgba(224,96,58,.25))}
+.working{font-family:var(--head);font-size:11px;letter-spacing:.3em;color:var(--faint);text-transform:uppercase;margin-top:8px}
+.tagline{font-family:var(--cinzel);font-style:italic;font-size:clamp(18px,3vw,27px);color:#fff;margin-top:26px;letter-spacing:.01em}
+.subhook{color:var(--mut);max-width:620px;margin:18px auto 0;font-size:16.5px}
+.cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.btn{font-family:var(--head);font-weight:600;font-size:14px;letter-spacing:.12em;text-transform:uppercase;padding:15px 30px;border-radius:10px;border:1px solid transparent;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:linear-gradient(180deg,var(--gold),var(--bronze));color:#0a0c10}
+.btn.ghost{background:transparent;border-color:rgba(230,177,62,.4);color:var(--gold)}
+
+/* ===== SECTION SHELL ===== */
+.section{padding:72px 0 10px}
+.eyrow{text-align:center;margin-bottom:10px}
+.eyrow .n{font-family:var(--cinzel);font-size:12px;letter-spacing:.4em;color:var(--rune);text-transform:uppercase}
+.eyrow h2{font-family:var(--disp);font-weight:400;font-size:clamp(30px,5vw,52px);letter-spacing:.02em;color:var(--ink);margin-top:6px;line-height:1}
+
+/* ===== LORE ===== */
+.lore{max-width:760px;margin:0 auto;text-align:center}
+.lore .lede{font-family:var(--cinzel);font-size:clamp(20px,3vw,26px);line-height:1.5;color:#fff;margin-bottom:30px}
+.lore p{color:var(--ink);font-size:17px;margin-bottom:20px}
+.lore p.mut{color:var(--mut)}
+.lore .drop::first-letter{font-family:var(--cinzel);font-size:64px;float:left;line-height:.8;padding:6px 12px 0 0;color:var(--gold)}
+.pull{margin:40px auto;max-width:680px;text-align:center;font-family:var(--cinzel);font-style:italic;font-size:clamp(22px,3.4vw,30px);color:var(--gold);line-height:1.4;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px 0}
+
+/* ===== PILLARS ===== */
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:36px}
+.pillar{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:26px 26px;position:relative;overflow:hidden}
+.pillar::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--ember),var(--gold),transparent)}
+.pillar .pi{width:44px;height:44px;border-radius:11px;display:grid;place-items:center;margin-bottom:16px;background:rgba(230,177,62,.1);border:1px solid rgba(230,177,62,.3)}
+.pillar h3{font-family:var(--disp);font-weight:400;font-size:25px;letter-spacing:.02em;color:var(--gold);margin-bottom:8px}
+.pillar p{color:var(--mut);font-size:14.5px}
+
+/* ===== RULES ===== */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+.rule{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;padding:24px 26px;position:relative}
+.rule::before{content:'';position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:3px}
+.rule.r1::before{background:linear-gradient(180deg,var(--ember),transparent)}
+.rule.r2::before{background:linear-gradient(180deg,var(--blood),transparent)}
+.rule.r3::before{background:linear-gradient(180deg,var(--freyja,#c85a8a),transparent)}
+.rule.r4::before{background:linear-gradient(180deg,var(--teal),transparent)}
+.rule.r5::before{background:linear-gradient(180deg,var(--gold),transparent)}
+.rule.r6::before{background:linear-gradient(180deg,var(--bronze),transparent)}
+.rule .rh{display:flex;align-items:center;gap:11px;margin-bottom:14px}
+.rule .rn{font-family:var(--disp);font-size:30px;line-height:1;color:rgba(255,255,255,.12)}
+.rule h3{font-family:var(--head);font-weight:600;font-size:16px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.rule ul{list-style:none}
+.rule li{position:relative;padding-left:18px;margin-bottom:9px;font-size:14.3px;color:var(--ink)}
+.rule li::before{content:'';position:absolute;left:2px;top:9px;width:5px;height:5px;border-radius:50%;background:var(--gold)}
+.rule li.dream{color:var(--mut)}
+.rule li.dream::before{background:var(--teal)}
+.rule li .star{color:var(--teal);font-family:var(--head);font-size:10px;letter-spacing:.06em;margin-left:4px;text-transform:uppercase}
+.rules-foot{text-align:center;color:var(--faint);font-size:13px;font-family:var(--head);letter-spacing:.06em;margin-top:18px}
+.rules-foot .star{color:var(--teal)}
+
+/* ===== ROADMAP ===== */
+.fund{max-width:760px;margin:30px auto 0;background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:30px 32px}
+.bar-label{display:flex;justify-content:space-between;font-family:var(--head);font-size:13px;letter-spacing:.06em;color:var(--mut);margin-bottom:10px}
+.bar-label b{color:var(--gold);font-size:18px}
+.bar{height:14px;background:#0a0c12;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.bar span{display:block;height:100%;width:34%;background:linear-gradient(90deg,var(--ember),var(--gold));border-radius:999px}
+.bar-sub{text-align:center;color:var(--faint);font-size:12.5px;margin-top:10px;font-family:var(--head);letter-spacing:.05em}
+.tiers{margin-top:30px;display:flex;flex-direction:column;gap:0}
+.tier{display:flex;gap:18px;padding:18px 0;border-top:1px solid var(--line)}
+.tier:first-child{border-top:none}
+.tier .amt{flex-shrink:0;width:96px;font-family:var(--disp);font-size:24px;color:var(--gold);line-height:1.1}
+.tier .ti h4{font-family:var(--head);font-weight:600;font-size:15px;letter-spacing:.04em;color:var(--ink);margin-bottom:3px}
+.tier .ti p{color:var(--mut);font-size:14px}
+.tier.locked .amt,.tier.locked .ti h4{color:var(--mut)}
+.tier .stretch{font-family:var(--head);font-size:9.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(47,217,196,.35);border-radius:4px;padding:1px 6px;margin-left:8px;vertical-align:middle}
+
+/* ===== FOUNDER ===== */
+.founder{max-width:720px;margin:30px auto 0;background:linear-gradient(180deg,rgba(158,43,58,.08),var(--panel));border:1px solid rgba(158,43,58,.3);border-radius:16px;padding:32px 34px;text-align:center}
+.founder .fk{font-family:var(--cinzel);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--ember);margin-bottom:16px}
+.founder p{color:var(--ink);font-size:16.5px;margin-bottom:16px}
+.founder .sig{font-family:var(--cinzel);font-style:italic;color:var(--gold);font-size:18px}
+
+/* ===== CLOSING CTA ===== */
+.close{text-align:center;padding:70px 22px 30px}
+.close h2{font-family:var(--disp);font-weight:400;font-size:clamp(34px,6vw,64px);letter-spacing:.02em;line-height:.95;
+  background:linear-gradient(180deg,#fff,var(--gold));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.close p{color:var(--mut);max-width:540px;margin:14px auto 0}
+
+.disclaimer{max-width:760px;margin:46px auto 0;text-align:center;color:var(--faint);font-size:12.5px;line-height:1.6;border-top:1px solid var(--line);padding-top:20px}
+footer{text-align:center;color:var(--faint);font-family:var(--cinzel);font-size:12px;letter-spacing:.25em;text-transform:uppercase;margin:36px 0 60px}
+
+@media(max-width:740px){.pillars,.rules{grid-template-columns:1fr}.tier{flex-direction:column;gap:6px}.tier .amt{width:auto}}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <svg class="hero-svg" viewBox="0 0 1200 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="sp" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#3a4154"/><stop offset="75%" stop-color="#c8780a"/><stop offset="100%" stop-color="#e6b13e"/></linearGradient>
+      <linearGradient id="bl" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#9e2b3a" stop-opacity=".7"/><stop offset="100%" stop-color="#e6b13e" stop-opacity=".9"/></linearGradient>
+    </defs>
+    <line x1="40" y1="170" x2="1160" y2="170" stroke="url(#sp)" stroke-width="2"/>
+    <g fill="#e6b13e" opacity=".8"><circle cx="120" cy="170" r="4"/><circle cx="320" cy="170" r="4"/><circle cx="520" cy="170" r="4"/><circle cx="720" cy="170" r="4"/><circle cx="920" cy="170" r="4"/><circle cx="1100" cy="170" r="4"/></g>
+    <g stroke="#e0603a" stroke-width="1.5" fill="none" opacity=".55"><path d="M220,120 l-6,26 l9,-5 l-5,24"/><path d="M620,120 l-6,26 l9,-5 l-5,24"/><path d="M1010,120 l-6,26 l9,-5 l-5,24"/></g>
+    <path d="M120,170 C220,90 280,90 320,120 C380,164 460,70 520,100 C580,130 660,70 720,104 C790,142 860,84 920,108 C1000,140 1060,118 1100,118"
+      fill="none" stroke="url(#bl)" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="eyebrow">A lilkat Collective Saga</div>
+    <h1 class="title">BLOODLINE</h1>
+    <div class="working">Working Title</div>
+    <p class="tagline">You don't get a life. You get a lineage.</p>
+    <p class="subhook">An open-world survival epic that spans ten thousand years. Outlast every age, raise the family that carries your fire, and die into your own child so the work never ends.</p>
+    <div class="cta-row">
+      <a class="btn primary" href="#back">Back the Bloodline</a>
+      <a class="btn ghost" href="#story">Read the Saga</a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ===== STORY ===== -->
+  <section class="section" id="story">
+    <div class="eyrow"><div class="n">The Saga</div><h2>One Spark, Ten Thousand Years</h2></div>
+    <div class="lore">
+      <p class="lede">The world has ended before. It will end again. The only thing that has ever crossed from one world to the next is you.</p>
+      <p class="drop">You wake at the dawn of everything, in a body that will not last. You learn to make fire. You learn the words that keep a tribe alive through the long dark. You bury the ones who came before you, and you raise the ones who come after. Then you grow old, and you feel the cold reach your chest, and you close your eyes.</p>
+      <p>And you open them again, looking out from your own child.</p>
+      <p class="mut">This is the secret the game is built on. You are not a hero. You are a thread of blood and memory that refuses to be cut. Every life you live is borrowed, and every death hands you forward to the next. What carries across is small and precious: a gift written into the body, a skill burned into the hands, a hard lesson your grandmother paid for in full.</p>
+      <p class="mut">The ages turn whether you are ready or not. The ice comes. The waters rise. The old world breaks and a new one takes its place, and the things that kept your line alive yesterday are useless against tomorrow. You survive by building. The shelter against the storm. The walls that keep your children breathing long enough to inherit. The knowledge you pass down before the body that holds it falls.</p>
+    </div>
+    <div class="pull">"Some men plant trees they will never sit beneath. You plant the whole forest, then live to walk in it as your own descendant."</div>
+  </section>
+
+  <!-- ===== PILLARS ===== -->
+  <section class="section">
+    <div class="eyrow"><div class="n">What You'll Do</div><h2>Live. Build. Endure. Continue.</h2></div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6b13e" stroke-width="1.8"><path d="M12 2v6m0 0l4-3m-4 3L8 5M5 21h14l-2-9H7l-2 9z"/></svg></div>
+        <h3>Survive the Present</h3>
+        <p>Hunt, gather, and craft against hunger, cold, and the dark. Raise shelters and homes that hold the line together when the world turns against it.</p>
+      </div>
+      <div class="pillar">
+        <div class="pi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6b13e" stroke-width="1.8"><path d="M4 20c0-6 4-9 8-9s8 3 8 9M8 8a4 4 0 108 0 4 4 0 00-8 0z"/></svg></div>
+        <h3>Raise a Bloodline</h3>
+        <p>Build a family. Choose who carries the line. Watch children grow into the heirs you will one day become, each a different hand of inherited strengths.</p>
+      </div>
+      <div class="pillar">
+        <div class="pi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6b13e" stroke-width="1.8"><path d="M12 3v18M7 7l5-4 5 4M7 17l5 4 5-4"/></svg></div>
+        <h3>Craft Your Blood</h3>
+        <p>On every death, choose what crosses over. Sculpt a lineage trait by trait and skill by skill, breeding a family fit for the age that's coming.</p>
+      </div>
+      <div class="pillar">
+        <div class="pi"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#e6b13e" stroke-width="1.8"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg></div>
+        <h3>Outlast the Ages</h3>
+        <p>Cross from the stone age to the iron, to the modern, and beyond. Each cataclysm is a wall. Only the prepared line makes it to the far side.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RULES ===== -->
+  <section class="section" id="rules">
+    <div class="eyrow"><div class="n">How It Plays</div><h2>The Rules of the Line</h2></div>
+
+    <div class="rules">
+
+      <article class="rule r1">
+        <div class="rh"><span class="rn">I</span><h3>The Ages · Timeline Advances</h3></div>
+        <ul>
+          <li>The world moves through ages: Dawn, Stone, Bronze, Iron, and on toward the present and past it.</li>
+          <li>You never choose when an age ends. A time-shift arrives as a world-rewriting cataclysm: an ice age, a great flood, a collapse.</li>
+          <li>Each shift tests your line. Reach the threshold of tech, shelter, and knowledge and you cross over. Fall short and the cataclysm takes everything you built.</li>
+          <li>Every new age rewrites the map, the resources, and the threats. What saved you last age may be worthless in the next.</li>
+          <li>Crossing is permanent. The world you knew is gone, and the line carries on into a stranger one.</li>
+        </ul>
+      </article>
+
+      <article class="rule r2">
+        <div class="rh"><span class="rn">II</span><h3>Death · The Handoff</h3></div>
+        <ul>
+          <li>Every body is mortal. Each character ages on a lifespan clock and will die. This is the engine of the game, not a penalty.</li>
+          <li>When your body dies of age, control passes into your living heir. You wake as them and the story continues unbroken.</li>
+          <li>Death by starvation, cold, wound, or cataclysm is failure, and it can cost you the line.</li>
+          <li>Die with no heir and no way to continue the blood, and the line ends. That is a true ending.</li>
+          <li>A life leaves a mark. The skills a body mastered and the traits it carried become candidates to pass down.</li>
+        </ul>
+      </article>
+
+      <article class="rule r3">
+        <div class="rh"><span class="rn">III</span><h3>The Line · Reproducing</h3></div>
+        <ul>
+          <li>To outlive a single body, you must continue the blood. Raise a family and bring up heirs before death comes for you.</li>
+          <li>Who you pair with matters. A mate carries their own traits, and the union shapes what your children can inherit.</li>
+          <li>Children grow in real time. A line with no next generation ready is a line one bad winter from ending.</li>
+          <li>Heirs are real people in the world long before you inherit them: raised, fed, protected, and taught.</li>
+          <li class="dream">Multiple children let you choose which one to continue as, each a different inherited hand.<span class="star">Vision</span></li>
+        </ul>
+      </article>
+
+      <article class="rule r4">
+        <div class="rh"><span class="rn">IV</span><h3>Knowledge · Tech Advancement</h3></div>
+        <ul>
+          <li>Knowledge is the spine of survival: fire, tools, language, farming, metalwork, and up the long ladder.</li>
+          <li>Tech is earned in the world and recorded to the line. It carries across generations through what you choose to pass down.</li>
+          <li>Each age has its own ceiling and its own unlocks. The cataclysm threshold is, above all, a test of how far you've climbed.</li>
+          <li>Lose the carrier of a skill before it's passed on, and that knowledge can be lost to your line. Progress can break.</li>
+          <li>Tech and blood are linked. Some advances only open to a lineage that carries the traits to support them.</li>
+        </ul>
+      </article>
+
+      <article class="rule r5">
+        <div class="rh"><span class="rn">V</span><h3>Genetic Crafting · The Signature</h3></div>
+        <ul>
+          <li>Your bloodline is something you craft, the same way you craft a blade or a wall.</li>
+          <li>On each death, an inheritance screen offers a limited set of slots. You choose which traits and which skills cross into your heir.</li>
+          <li>Traits run body and mind: strength, resilience, long life, keen senses, temperament, resistance to disease.</li>
+          <li>Slots are scarce on purpose. You can't carry everything, so every inheritance sacrifices something you fought to build.</li>
+          <li>Across many lives you sculpt a line built for the world to come, choosing toward the traits the next age will demand.</li>
+          <li class="dream">Mutations, recessive traits, and rare lineages give a long run real surprise.<span class="star">Vision</span></li>
+        </ul>
+      </article>
+
+      <article class="rule r6">
+        <div class="rh"><span class="rn">VI</span><h3>Building &amp; Shelter · Two Masters</h3></div>
+        <ul>
+          <li>Crafting serves two masters at once: surviving today, and carrying the line forward.</li>
+          <li>For the present, build shelters and homes against the cold, the dark, the beasts, and the coming cataclysm.</li>
+          <li>Shelter grows with the age: a hide lean-to in the Stone years, timber longhouses, stone halls, and upward.</li>
+          <li>Some builds protect the body. Some protect the line. A strong home raises more children safely to inherit.</li>
+          <li>What you raise outlasts you. Your descendants inherit the walls, the hearth, and the home you built.</li>
+          <li class="dream">Settlements grow with your blood and become the seat of a dynasty.<span class="star">Vision</span></li>
+        </ul>
+      </article>
+
+    </div>
+    <p class="rules-foot"><span class="star">Vision</span> marks features on our roadmap, beyond the first playable build.</p>
+  </section>
+
+  <!-- ===== ROADMAP / FUND ===== -->
+  <section class="section" id="back">
+    <div class="eyrow"><div class="n">Back the Build</div><h2>Light the First Fire</h2></div>
+    <div class="fund">
+      <div class="bar-label"><span>Raised so far</span><b>The journey begins with you</b></div>
+      <div class="bar"><span></span></div>
+      <div class="bar-sub">Every backer carries the line one generation further. Founding backers are named in the game's first hall.</div>
+
+      <div class="tiers">
+        <div class="tier">
+          <div class="amt">Slice</div>
+          <div class="ti"><h4>One Age, One Heir</h4><p>The first playable build. Survive a single age, raise an heir, and feel the handoff that makes Bloodline unlike anything on the shelf.</p></div>
+        </div>
+        <div class="tier locked">
+          <div class="amt">Goal</div>
+          <div class="ti"><h4>The Full Ladder<span class="stretch">Stretch</span></h4><p>The complete march from Dawn to the modern age, every cataclysm, every tech tier, the whole ten-thousand-year run.</p></div>
+        </div>
+        <div class="tier locked">
+          <div class="amt">+</div>
+          <div class="ti"><h4>Bloodlines, Together<span class="stretch">Stretch</span></h4><p>Co-op. Share one lineage with friends and raise a tribe across the ages, splitting the labor of survival between families.</p></div>
+        </div>
+        <div class="tier locked">
+          <div class="amt">++</div>
+          <div class="ti"><h4>Beyond the Present<span class="stretch">Stretch</span></h4><p>Push your line past today into the ages still to come, where the threats stop looking like anything your ancestors ever faced.</p></div>
+        </div>
+        <div class="tier locked">
+          <div class="amt">+++</div>
+          <div class="ti"><h4>Walk Backward<span class="stretch">Dream</span></h4><p>Earn the power to return to a single ancestral moment and change one decision, and watch the whole line reshape around it.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDER ===== -->
+  <section class="section">
+    <div class="founder">
+      <div class="fk">A Note From the Studio</div>
+      <p>We set out to build the survival game we always wanted to play. Not another world you respawn in, but a world you grow old in, hand down, and inherit. A game where the choice that keeps you up at night isn't where to put your base. It's what you're willing to let die so the rest of you can live.</p>
+      <p>We're a small team that builds differently. Back us and you're not buying a game. You're starting a line.</p>
+      <p class="sig">The lilkat Collective</p>
+    </div>
+  </section>
+
+  <!-- ===== CLOSE ===== -->
+  <section class="close">
+    <h2>Outlive Yourself.</h2>
+    <p>Wishlist Bloodline, join the line, and be there for the first fire.</p>
+    <div class="cta-row" style="margin-top:28px">
+      <a class="btn primary" href="#back">Back the Bloodline</a>
+      <a class="btn ghost" href="#story">Read the Saga</a>
+    </div>
+  </section>
+
+  <p class="disclaimer">Bloodline is a working title and in active development. Art is representative, and features described here reflect our target vision for the full game. Some systems shown are roadmap and stretch goals beyond the first playable build, and the final game may evolve as we build and learn. Thank you for backing the line.</p>
+
+  <footer>Bloodline · A lilkat Collective Saga · Wishlist coming soon</footer>
+</div>
+</body>
+</html>
